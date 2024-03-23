@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Jukebox</title>
+
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div id="show-wrapper">
+            <select id="shows"></select>
+            <button id="select-show"><i class="fa-regular fa-check"></i></button>
+            <button id="edit-show"><i class="fa-regular fa-pen-to-square"></i></button>
+        </div>
+
+        <button id="add-show">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </header>
+
+    <form id="show-setup" class="hidden">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" id="show-name">
+        </div>
+        <div class="form-group">
+            <label>Intro Song</label>
+            <select id="intro-song" class="song-list"></select>
+        </div>
+        <div class="form-group">
+            <label>Outro Song</label>
+            <select id="outro-song" class="song-list"></select>
+        </div>
+        <div class="form-group" id="walk-builder">
+            <label>Walk On/Off Songs</label>
+            <div>
+                <div>
+                    <select id="song-pool" class="song-list" size="10" multiple></select>
+                    <button style="visibility: hidden"><i class="fa-sharp fa-regular fa-up"></i></button>
+                </div>
+                <button id="add-to-list"><i class="fa-sharp fa-regular fa-right"></i></button>
+                <div>
+                    <select id="walk-songs" size="10"></select>
+                    <button id="move-up"><i class="fa-sharp fa-regular fa-up"></i></button>
+                    <button id="move-down"><i class="fa-sharp fa-regular fa-down"></i></button>
+                    <button id="remove"><i class="fa-sharp fa-regular fa-xmark"></i></button>
+                    <button id="empty"><i class="fa-sharp fa-regular fa-trash-can"></i></button>    
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <button id="save-show">Save Changes</button>
+    </form>
+
+    <div id="playlist" class="hidden">
+        <div>
+            <button id="play-intro">Play Intro</button>
+            <button id="pause-intro" class="hidden">Pause Intro</button>
+
+            <button id="play-outro">Play Outro</button>
+            <button id="pause-outro" class="hidden">Pause Outro</button>
+        </div>
+
+        <div>
+            <div>
+                <button id="play-walk-song">Play Walk Song</button>
+                <button id="stop-walk-song" class="hidden">Stop Walk Song</button>
+            </div>
+            <select id="playlist-walk-songs" size="10"></select>
+            <div>
+                <button id="shuffle-walk-songs">Shuffle</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/60bfb3e430.js" crossorigin="anonymous"></script>
+</body>
+</html>
